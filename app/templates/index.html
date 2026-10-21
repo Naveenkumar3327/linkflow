@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linkora — Shorten Links. Share Smarter.</title>
+  <meta name="description" content="Transform long, unwieldy URLs into clean, shareable links in seconds with Linkora's fast and reliable URL shortener.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L17.586 11H3a1 1 0 1 1 0-2h14.586l-4.293-4.293a1 1 0 0 1 0-1.414z'/></svg>">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="glow-sphere glow-sphere-1" aria-hidden="true"></div>
+  <div class="glow-sphere glow-sphere-2" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="/" class="brand-logo" id="brand-logo" aria-label="Linkora Home">
+        <div class="logo-icon-box">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </div>
+        <span class="brand-text">Linkora<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="/" class="nav-link active" id="nav-home">Home</a></li>
+          <li class="nav-item"><a href="#how-it-works" class="nav-link" id="nav-how-it-works">How It Works</a></li>
+          <li class="nav-item">
+            <a href="/docs" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-docs" id="nav-api-docs">
+              API Docs
+              <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content" id="main-content">
+    <div class="container">
+      
+      <!-- Hero Section -->
+      <section class="hero-section" id="hero-section">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Fast, Reliable &amp; Persistent</span>
+        </div>
+        <h1 class="hero-title" id="main-heading">
+          Shorten Links. <span class="gradient-text">Share Smarter.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Transform long URLs into clean, shareable links in seconds.
+        </p>
+      </section>
+
+      <!-- URL Shortener Card -->
+      <section class="shortener-section" aria-label="URL Shortening Form">
+        <div class="card shortener-card" id="shortener-card">
+          <form id="shorten-form" class="shorten-form" novalidate>
+            <label for="url-input" class="form-label">Paste your long URL</label>
+            <div class="input-wrapper">
+              <span class="input-icon-box" aria-hidden="true">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </span>
+              <input 
+                type="url" 
+                id="url-input" 
+                name="url" 
+                class="url-input" 
+                placeholder="https://example.com/your/long/url" 
+                required 
+                autocomplete="off" 
+                spellcheck="false"
+                aria-describedby="validation-message"
+              >
+              <button type="submit" id="shorten-button" class="btn btn-primary" aria-label="Shorten URL">
+                <span class="btn-text">Shorten URL</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+            
+            <!-- Inline validation message -->
+            <div id="validation-message" class="validation-message" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Generated Result Card (Hidden by default, shown upon successful creation) -->
+        <div id="result-card" class="card result-card hidden" aria-live="polite" aria-labelledby="result-title">
+          <div class="result-header">
+            <div class="result-title-group">
+              <span class="success-icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <h2 id="result-title" class="result-title">Your shortened URL is ready!</h2>
+            </div>
+            <span class="status-pill">Active &amp; Ready</span>
+          </div>
+
+          <div class="result-body">
+            <div class="result-link-box">
+              <div class="short-url-display">
+                <svg class="link-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                <a id="short-url-link" class="short-url-anchor" href="#" target="_blank" rel="noopener noreferrer"></a>
+              </div>
+              <button type="button" id="copy-button" class="btn btn-secondary" aria-label="Copy short URL to clipboard">
+                <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="copy-button-text">Copy Link</span>
+              </button>
+            </div>
+
+            <!-- Original Destination Information -->
+            <div class="original-url-info">
+              <span class="original-label">Destination:</span>
+              <span id="original-url-text" class="original-url-text"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="how-it-works-section" id="how-it-works" aria-labelledby="how-it-works-heading">
+        <div class="section-header">
+          <h2 id="how-it-works-heading" class="section-title">How It Works</h2>
+          <p class="section-subtitle">Three simple steps to streamline your links</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="card step-card" id="step-1-card">
+            <div class="step-icon-wrapper step-icon-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+              </svg>
+            </div>
+            <div class="step-badge">Step 1</div>
+            <h3 class="step-title">Paste Your Link</h3>
+            <p class="step-description">Enter any valid long HTTP or HTTPS web address into the shortener input field.</p>
+          </div>
+
+          <div class="card step-card" id="step-2-card">
+            <div class="step-icon-wrapper step-icon-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="step-badge">Step 2</div>
+            <h3 class="step-title">Generate a Short Link</h3>
+            <p class="step-description">Our service generates a unique, collision-resistant code and stores the mapping in SQLite.</p>
+          </div>
+
+          <div class="card step-card" id="step-3-card">
+            <div class="step-icon-wrapper step-icon-3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+            </div>
+            <div class="step-badge">Step 3</div>
+            <h3 class="step-title">Share Anywhere</h3>
+            <p class="step-description">Copy your compact link with one click and share across social media, docs, or messages.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="/" class="brand-logo footer-logo">
+          <div class="logo-icon-box">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+          </div>
+          <span class="brand-text">Linkora<span class="brand-dot">.</span></span>
+        </a>
+        <p class="footer-description">
+          Fast, reliable, and secure URL shortening. Built for developers and modern web users.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="/" class="footer-link">Home</a>
+        <a href="#how-it-works" class="footer-link">How It Works</a>
+        <a href="/docs" target="_blank" rel="noopener noreferrer" class="footer-link">API Documentation</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Linkora. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span id="toast-message" class="toast-message">Link copied to clipboard!</span>
+  </div>
+
+  <!-- Application Script -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
