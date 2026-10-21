@@ -16,7 +16,7 @@ import type { ShortenResponse, HistoryItem } from '../types';
 import { useToast } from '../components/Toast';
 
 
-const STORAGE_KEY = 'https://github.com/Naveenkumar3327/linkflow.githttps://github.com/Naveenkumar3327/linkflow.git_session_history';
+const STORAGE_KEY = 'linkflow_session_history';
 
 export const HomePage: React.FC = () => {
   const [inputUrl, setInputUrl] = useState('');
